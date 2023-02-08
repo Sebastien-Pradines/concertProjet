@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Concert;
+use App\Repository\ConcertRepository;
 use App\Form\ConcertType;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -14,11 +15,10 @@ use Doctrine\ORM\EntityManagerInterface;
 class ConcertController extends AbstractController
 {
     #[Route('/concert', name: 'concert')]
-    public function show(): Response
+    public function show(ConcertRepository $concertRepo): Response
     {
         return $this->render('concert/index.html.twig', [
-            
-            
+            'concerts' => $concertRepo->findAll(),
         ]);
     }
 
