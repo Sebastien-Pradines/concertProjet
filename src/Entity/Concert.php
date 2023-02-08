@@ -29,7 +29,7 @@ class Concert
     private ?\DateTimeInterface $date = null;
 
     #[ORM\ManyToOne(inversedBy: 'concerts')]
-    private ?stage $stage = null;
+    private ?Stage $stage = null;
 
     #[ORM\Column]
     private ?float $prix = null;

@@ -14,10 +14,10 @@ class Reservation
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'user')]
-    private ?concert $concert = null;
+    private ?Concert $concert = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
-    private ?user $user = null;
+    private ?User $user = null;
 
     public function getId(): ?int
     {

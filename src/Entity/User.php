@@ -27,7 +27,7 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $role = null;
 
-    #[ORM\ManyToMany(targetEntity: band::class, inversedBy: 'followers', cascade: ['persist', 'remove'])]
+    #[ORM\ManyToMany(targetEntity: Band::class, inversedBy: 'followers', cascade: ['persist', 'remove'])]
     private Collection $favorites;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Comment::class)]

@@ -18,16 +18,16 @@ class Band
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\ManyToMany(targetEntity: tags::class, inversedBy: 'bands', cascade: ['persist', 'remove'])]
+    #[ORM\ManyToMany(targetEntity: Tags::class, inversedBy: 'bands', cascade: ['persist', 'remove'])]
     private Collection $bandTags;
 
-    #[ORM\OneToMany(mappedBy: 'band', targetEntity: concert::class)]
+    #[ORM\OneToMany(mappedBy: 'band', targetEntity: Concert::class)]
     private Collection $concerts;
 
     #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'favorites', cascade: ['persist', 'remove'])]
     private Collection $followers;
 
-    #[ORM\OneToMany(mappedBy: 'band', targetEntity: member::class)]
+    #[ORM\OneToMany(mappedBy: 'band', targetEntity: Member::class)]
     private Collection $members;
 
     public function __construct()
