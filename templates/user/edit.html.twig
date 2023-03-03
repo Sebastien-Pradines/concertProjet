@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <h1 class="title">Modification du profil</h1>
+
+    <div class="container-fluid example-wrapper">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn crud-button" type="submit">Sauvegarder</button>
+        {{ form_end(form) }}
+    </div>
+    <div class="container-fluid bottom-wrapper">
+        <div class="row crud-button-div">
+            <a class="button-link" href="{{ path('app_user_index', {'id': app.user.id}) }}">
+                <button class="btn crud-button">
+                    Retour
+                </button>
+            </a>
+        </div>
+    </div>
+{% endblock %}

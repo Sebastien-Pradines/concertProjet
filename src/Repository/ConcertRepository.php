@@ -39,6 +39,26 @@ class ConcertRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAllFutureConcerts(){
+        $qb = $this->createQueryBuilder('c')
+            ->where('c.date > :date')
+            ->setParameter('date', new \DateTime())
+            ->orderBy('c.date', 'ASC');
+
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
+
+    public function findAllPreviousConcerts(){
+        $qb = $this->createQueryBuilder('c')
+            ->where('c.date < :date')
+            ->setParameter('date', new \DateTime())
+            ->orderBy('c.date', 'ASC');
+
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
+
 //    /**
 //     * @return Concert[] Returns an array of Concert objects
 //     */

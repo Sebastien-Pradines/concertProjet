@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Band index{% endblock %}
+
+{% block body %}
+    <h1 class="title">Band index</h1>
+
+<div class="container-fluid example-wrapper">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for band in bands %}
+            <tr>
+                <td>{{ band.id }}</td>
+                <td>{{ band.name }}</td>
+                <td>
+                    <button class="btn crud-button">
+                        <a class="button-link" href="{{ path('app_band_show', {'id': band.id}) }}">Voir</a>
+                    </button>
+                    <button class="btn crud-button">
+                        <a class="button-link" href="{{ path('app_band_edit', {'id': band.id}) }}">Modifier</a>
+                    </button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <button class="btn crud-button">
+        <a class="button-link" href="{{ path('app_band_new') }}">Nouveau</a>
+    </button>
+</div>
+{% endblock %}

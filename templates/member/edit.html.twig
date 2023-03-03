@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Member{% endblock %}
+
+{% block body %}
+    <h1 class="title">Edit Member</h1>
+
+    <div class="container-fluid example-wrapper">
+        {{ include('member/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
+
+    <div class="container-fluid bottom-wrapper">
+        <div class="row crud-button-div">
+            <button class="btn crud-button">
+                <a class="button-link" href="{{ path('app_member_index') }}">Retour</a>
+            </button>
+        {{ include('member/_delete_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

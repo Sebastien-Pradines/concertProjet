@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="alert alert-primary" role="alert">
+            Félicitation ! Vous êtes admin!
+        </div>
+    {% endif %}
+    <div class="example-wrapper">
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ user.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ user.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <button class="btn crud-button">
+            <a class="button-link" href="{{ path('app_user_edit', {'id': app.user.id}) }}">Modifier mes informations</a>
+        </button>
+    </div>
+{% endblock %}

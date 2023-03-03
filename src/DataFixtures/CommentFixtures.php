@@ -15,7 +15,6 @@ class CommentFixtures extends Fixture implements DependentFixtureInterface
         $c1->setContent("j'aime pas !")
             ->setUser($this->getReference(UserFixtures::USER_REFERENCE_1))
             ->setConcert($this->getReference(ConcertFixtures::CONCERT_REFERENCE_1));
-
         $manager->persist($c1);
 
         $manager->flush();

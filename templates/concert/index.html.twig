@@ -1,17 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ConcertController!{% endblock %}
+{% block title %}Concert index{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1 class="title">Concert index</h1>
 
-<div class="example-wrapper">
-    <h1>Voici la liste des concerts</h1>
-    {% for concert in concerts %}
-        <p>{{ concert.name }}</p>
-    {% endfor %}
-</div>
+    <div class="container-fluid example-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Groupe</th>
+                    <th>Date</th>
+                    <th>Prix</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for concert in concerts %}
+                <tr>
+                    <td>{{ concert.id }}</td>
+                    <td>{{ concert.name }}</td>
+                    <td>{{ concert.band.name }}</td>
+                    <td>{{ concert.date ? concert.date|date('Y-m-d') : '' }}</td>
+                    <td>{{ concert.prix }}</td>
+                    <td>
+                        <button class="btn crud-button">
+                            <a class="button-link" href="{{ path('app_concert_show', {'id': concert.id}) }}">Voir</a>
+                        </button>
+                        <button class="btn crud-button">
+                            <a class="button-link" href="{{ path('app_concert_edit', {'id': concert.id}) }}">Modifier</a>
+                        </button>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+        <button class="btn crud-button">
+            <a class="button-link" href="{{ path('app_concert_new') }}">Nouveau</a>
+        </button>
+    </div>
 {% endblock %}

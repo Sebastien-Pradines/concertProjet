@@ -1,0 +1,38 @@
+
+
+.example-wrapper {
+    margin: 1em auto;
+    padding: 8px;
+    max-width: 1000px;
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+    border: #d9d9d9 solid 1px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.bottom-wrapper{
+    margin: 0em auto;
+    padding: 8px;
+    max-width: 1000px;
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+}
+
+.button-link{
+    color: black;
+}
+
+.title{
+    text-align: center;
+}
+
+.crud-button-div {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+}
+
+.crud-button {
+    margin: 5px;
+}
