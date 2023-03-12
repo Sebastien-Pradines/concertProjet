@@ -17,10 +17,10 @@ class Comment
     private ?string $content = null;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
-    private ?user $user = null;
+    private ?User $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
-    private ?concert $concert = null;
+    private ?Concert $concert = null;
 
     public function getId(): ?int
     {

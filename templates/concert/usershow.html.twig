@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Concert{% endblock %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <style>
+        #comment_content {height: 100px; width: 1170px;}
+    </style>
+    <h1 class="title">{{ concert.name }}</h1>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <h2 class="title">Partage ton avis sur le concert !</h2>
+        <div class="container-fluid row example-wrapper">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn">Envoyer</button>
+            {{ form_end(form) }}
+        </div>
+    {% endif %}
+
+    <h2 class="title">Commentaires:</h2>
+    <div class="container-fluid row example-wrapper">
+        {%  for comment in concert.comments %}
+            <div class="card" style="margin: 5px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ comment.user.firstName }} {{ comment.user.lastName }}</h5>
+                    <hr class="dropdown-divider">
+                    <p class="card-text">{{ comment.content }}</p>
+
+                    {# Les admins peuvent supprimer les commentaires #}
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <hr class="dropdown-divider">
+                        <form method="post" action="{{ path('app_comment_delete', {'id': comment.id}) }}" onsubmit="return confirm('Êtes vous sûr de supprimer ce commentaire ?');">
+                            <button class="btn crud-button">Supprimer</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            <p>Il n'y a aucun commentaire pour ce concert.</p>
+        {%  endfor %}
+    </div>
+
+{% endblock %}

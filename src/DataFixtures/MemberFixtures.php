@@ -34,7 +34,7 @@ class MemberFixtures extends Fixture
             ->setLastName('Trujillo')
             ->setGroupRole('Bassiste')
             ->setBirthDate(\DateTime::createFromFormat('d/m/Y','24/12/0'))
-            ->setPicture('amen.jpg');
+            ->setPicture('Robert_Trujillo_2017.jpg');
         $manager->persist($m1);
 
         $m2 = new Member();
@@ -42,7 +42,7 @@ class MemberFixtures extends Fixture
             ->setLastName('Hetfield')
             ->setGroupRole('Chanteur / Guitariste')
             ->setBirthDate(\DateTime::createFromFormat('d/m/Y','13/08/1963'))
-            ->setPicture('moi.jpg');
+            ->setPicture('James_Hetfield_2017.jpg');
         $manager->persist($m2);
 
         $m3 = new Member();
@@ -50,7 +50,7 @@ class MemberFixtures extends Fixture
             ->setLastName('Ulrich')
             ->setGroupRole('Batteur')
             ->setBirthDate(\DateTime::createFromFormat('d/m/Y','26/13/1963'))
-            ->setPicture('amen.jpg');
+            ->setPicture('Lars_Ulrich_(26060414430).jpg');
         $manager->persist($m3);
 
         $m4 = new Member();
@@ -58,7 +58,7 @@ class MemberFixtures extends Fixture
             ->setLastName('Hammett')
             ->setGroupRole('Guitariste')
             ->setBirthDate(\DateTime::createFromFormat('d/m/Y','18/11/1962'))
-            ->setPicture('bom.jpg');
+            ->setPicture('Kirk_Hammett_2017.jpg');
         $manager->persist($m4);
 
         $m5 = new Member();
