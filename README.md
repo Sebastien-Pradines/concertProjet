@@ -25,7 +25,7 @@ Liste des features implémentées:
 
 Liste d'ajout non mentionné dans les nice to have:
   - ✅ Système de commentaires sur les anciens concerts
-  - ✅ Boutton "Se souvenir de moi" permettant de rester connecté pendent
+  - ✅ Boutton "Se souvenir de moi" permettant de rester connecté pendent une semaine
   
   
 Tous les mots de passe des comptes générés par les fixtures ont pour mot de passe: 123456789
