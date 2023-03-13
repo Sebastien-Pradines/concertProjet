@@ -30,3 +30,8 @@ Liste d'ajout non mentionné dans les nice to have:
   
 Tous les mots de passe des comptes générés par les fixtures ont pour mot de passe: 123456789
 Pour le bien des tests il existe un compte admin: seba@gmail.com qui a aussi 123456789 pour mot de passe
+
+
+BDD :
+
+![alt text](https://fs-01.cyberdrop.to/Diagramme%20sans%20nom-Page-1.drawio-0JEwExRQ.png)
