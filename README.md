@@ -1,6 +1,7 @@
 # concertProjet
 
-A cause d'un problème de droit d'écriture sur ma session à l'iut je n'ai pas pu mettre en ligne le projet, il fonctionne très bien en local
+Lien du site: https://webinfo.iutmontp.univ-montp2.fr/~pradiness/concertProjet/public/
+
 Liste des features implémentées:
 
  User :
